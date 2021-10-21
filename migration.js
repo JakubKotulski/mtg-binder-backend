@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const Card = require("./models/card");
+const Card = require("./node/models/card/card");
 
 mongoose.connect(
   "mongodb+srv://praktyki:praktyki2021@development.wtktz.mongodb.net/mtg-binder",
