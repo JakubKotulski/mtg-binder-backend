@@ -10,6 +10,7 @@ const app = express();
 const { getCardsAction } = require("./src/actions/get-cards");
 const { signupAction } = require("./src/actions/sign-up-user");
 const { loginAction } = require("./src/actions/login-user");
+const { getLoggedUserAction } = require("./src/actions/get-logged-user");
 
 mongoose.connect(
   "mongodb+srv://praktyki:praktyki2021@development.wtktz.mongodb.net/mtg-binder",
@@ -47,6 +48,7 @@ require("./src/passport-config")(passport);
 app.get("/cards", getCardsAction);
 app.post("/register", signupAction);
 app.post("/login", loginAction);
+app.get("/user", getLoggedUserAction);
 
 app.listen(4000, () => {
   console.log("Server has started");
