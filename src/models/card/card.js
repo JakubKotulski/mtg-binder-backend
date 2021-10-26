@@ -9,9 +9,6 @@ const card = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: User,
   },
-  ownerPhoneNumber: String,
-  ownerName: String,
-  OwnerSurname: String,
 });
 
 module.exports = mongoose.model("card", card);

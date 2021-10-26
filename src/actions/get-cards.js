@@ -2,6 +2,7 @@ const Card = require("../models/card/card");
 
 const getCardsAction = (req, res) => {
   Card.find({})
+    .populate("userID")
     .then((data) => {
       res.json(data);
     })
