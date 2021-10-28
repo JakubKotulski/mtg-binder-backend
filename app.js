@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const MongoStore = require("connect-mongo");
 const express = require("express");
 const cors = require("cors");
 const passport = require("passport");
@@ -15,6 +16,7 @@ const { addCard } = require("./src/actions/add-cards");
 const { updateCardsAction } = require("./src/actions/update-cards");
 const { markSoldCardsAction } = require("./src/actions/mark-sold-cards");
 const { getCardAction } = require("./src/actions/get-card");
+const { logout } = require("./src/actions/logout");
 
 mongoose.connect(
   "mongodb+srv://praktyki:praktyki2021@development.wtktz.mongodb.net/mtg-binder",
@@ -41,6 +43,9 @@ app.use(
     secret: "secretcode",
     resave: true,
     saveUninitialized: true,
+    store: MongoStore.create({
+      mongoUrl: "mongodb+srv://praktyki:praktyki2021@development.wtktz.mongodb.net/mtg-binder",
+    }),
   })
 );
 
@@ -59,6 +64,8 @@ app.patch("/cards/:id/sold", markSoldCardsAction);
 app.post("/users", signupAction);
 app.post("/users/login", loginAction);
 app.get("/users/me", getLoggedUserAction);
+
+app.post("/logout", logout);
 
 app.listen(4000, () => {
   console.log("Server has started");
