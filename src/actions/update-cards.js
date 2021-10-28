@@ -1,7 +1,6 @@
 const Card = require("../models/card/card");
 
 const updateCardsAction = async (req, res) => {
-  console.log(req.body);
   try {
     const name = req.body.name;
     const price = req.body.price;
