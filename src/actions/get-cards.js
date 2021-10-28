@@ -1,7 +1,7 @@
 const Card = require("../models/card/card");
 
 const getCardsAction = (req, res) => {
-  Card.find({})
+  Card.find({ sold: false})
     .populate("userID")
     .then((data) => {
       res.json(data);

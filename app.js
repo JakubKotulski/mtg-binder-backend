@@ -17,6 +17,7 @@ const { updateCardsAction } = require("./src/actions/update-cards");
 const { markSoldCardsAction } = require("./src/actions/mark-sold-cards");
 const { getCardAction } = require("./src/actions/get-card");
 const { logout } = require("./src/actions/logout");
+const { updateUsersAction } = require("./src/actions/users-update");
 
 mongoose.connect(
   "mongodb+srv://praktyki:praktyki2021@development.wtktz.mongodb.net/mtg-binder",
@@ -64,6 +65,7 @@ app.patch("/cards/:id/sold", markSoldCardsAction);
 app.post("/users", signupAction);
 app.post("/users/login", loginAction);
 app.get("/users/me", getLoggedUserAction);
+app.put("/users/update", updateUsersAction);
 
 app.post("/logout", logout);
 

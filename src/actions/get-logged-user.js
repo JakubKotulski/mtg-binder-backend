@@ -1,5 +1,5 @@
 const getLoggedUserAction = (req, res) => {
-  res.send(req.user);
+  res.json(req.user);
 };
 
 module.exports = { getLoggedUserAction };
