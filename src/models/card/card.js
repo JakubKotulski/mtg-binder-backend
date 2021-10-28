@@ -5,6 +5,7 @@ const card = new mongoose.Schema({
   name: String,
   price: Number,
   url: String,
+  sold: Boolean,
   userID: {
     type: mongoose.Schema.Types.ObjectId,
     ref: User,
