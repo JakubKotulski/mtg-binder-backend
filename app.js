@@ -48,9 +48,9 @@ app.use(
       mongoUrl: "mongodb+srv://praktyki:praktyki2021@development.wtktz.mongodb.net/mtg-binder",
     }),
     cookie: {
-      httpOnly: false,
+      // httpOnly: tr,
       sameSite: "none",
-      secure: false,
+      secure: true,
     },
   })
 );
