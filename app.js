@@ -47,6 +47,9 @@ app.use(
     store: MongoStore.create({
       mongoUrl: "mongodb+srv://praktyki:praktyki2021@development.wtktz.mongodb.net/mtg-binder",
     }),
+    cookie: {
+      httpOnly: false,
+    },
   })
 );
 
