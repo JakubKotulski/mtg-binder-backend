@@ -50,7 +50,7 @@ app.use(
     cookie: {
       httpOnly: false,
       sameSite: "none",
-      secure: true,
+      secure: "auto",
     },
   })
 );
