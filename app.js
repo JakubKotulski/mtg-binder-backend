@@ -69,6 +69,6 @@ app.put("/users/update", updateUsersAction);
 
 app.post("/logout", logout);
 
-app.listen(4000 || process.env.PORT, () => {
+app.listen(process.env.PORT || 4000, () => {
   console.log("Server has started");
 });
